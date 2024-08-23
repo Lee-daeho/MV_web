@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload with Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Upload a File</h1>
+        <button id="upload-button">Select File</button>
+    </div>
+    <input type="file" id="file-input" style="display: none;">
+    <p id="loading-message">처리중입니다...</p>
+    
+    <div class="content">
+        <div class="image-wrapper">
+            <img id="mfcc-image" src="/uploads/tmp.png" alt="MFCC Image" style="display:none;">
+            
+            <!-- 새로운 이미지 표시 영역 -->
+            <div id="image-container" class="image-container"></div>
+        </div>
+        <!-- select-button을 image-wrapper 아래로 이동 -->
+        <button id="select-button">이미지 선택 버튼</button>
+        
+        <!-- 기존 버튼들 유지 -->
+        <div class="buttons">
+            <button id="button1">{{ button1_text }}</button>
+            <button id="button2">{{ button2_text }}</button>
+            <button id="button3">{{ button3_text }}</button>
+        </div>
+    </div>
+    <p id="result-text"></p>
+
+    <!-- 채팅창 -->
+    <div class="chat-container">
+        <div id="chat-log" class="chat-log">
+            <!-- 채팅 로그가 여기에 추가됩니다 -->
+        </div>
+        <div class="chat-input-container">
+            <label for="chat-input">입력창:</label>
+            <input type="text" id="chat-input" placeholder="메시지를 입력하세요...">
+            <button id="send-button">전송</button>
+            <button id="upload-button2">파일 업로드</button> <!-- 파일 업로드 버튼 추가 -->
+            <input type="file" id="file-input2" style="display: none;"> <!-- 숨겨진 파일 입력 필드 -->
+        </div>
+    </div>
+</body>
+</html>
