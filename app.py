@@ -8,6 +8,7 @@ from pinterest_crawler import PinterestCrawler
 import openai
 import time
 import logging
+from dotenv import load_dotenv
 ########################TODO########################
 '''
 대화만들고 + 선택한 파일 어떻게 GPT로 올릴지 정하고 + aesthetic들 받아올때 어떤식으로 받아올지 다시정하고
@@ -24,7 +25,7 @@ app.config['IMGS_FOLDER'] = IMG_FOLDER
 aesthetic_dict = {}
 
 assistant_id = 'asst_Pu75V8CkpsLdUab7JFpRUZjt'
-
+load_dotenv('~/.env')
 client = openai.OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
 
 @app.route('/')
