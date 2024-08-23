@@ -25,7 +25,7 @@ aesthetic_dict = {}
 
 assistant_id = 'asst_Pu75V8CkpsLdUab7JFpRUZjt'
 
-client = openai.OpenAI(api_key=os.ggetenv['OPENAI_API_KEY'])
+client = openai.OpenAI(api_key=os.getenv['OPENAI_API_KEY'])
 
 @app.route('/')
 def home():
